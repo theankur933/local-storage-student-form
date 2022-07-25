@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Form</title>
+    <!-- Link css -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Link font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akshar:wght@400;600&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <td>
+          <form
+            onsubmit="event.preventDefault(); onFormSubmit();"
+            autocomplete="off"
+          >
+            <h2>Student Form</h2>
+            <div>
+              <label>Student Name*</label
+              ><label class="validation-error hide" id="fullNameValidationError"
+                >This field is required.</label
+              >
+              <input type="text" name="fullName" id="fullName" />
+            </div>
+            <div>
+              <label>Student Roll Number</label>
+              <input type="number" name="empCode" id="empCode" />
+            </div>
+            <div>
+              <label>College</label>
+              <input type="text" name="college" id="college" />
+            </div>
+            <select name="storage" id="storage">
+              <option>Select Storage</option>
+              <option id="local">Local Storage</option>
+              <option id="session">Session Storage</option>
+              <option id="cookies">Cookies Storage</option>
+            </select>
+            <div class="form-action-buttons">
+              <input type="submit" value="Local" onclick="saveLocal()" />
+              <input type="submit" value="Session" onclick="saveSession()" />
+              <input type="submit" value="Cookies" onclick="saveCookie()" />
+            </div>
+          </form>
+        </td>
+        <td>
+          <table class="list" id="employeeList">
+            <thead>
+              <h2>Output</h2>
+              <tr>
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>College</th>
+                <th>Edit/Delete</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <script src="js/script.js"></script>
+  </body>
+</html>
